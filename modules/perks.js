@@ -806,7 +806,7 @@ RAutoPerks.displayGUI = function() {
     //Line 3 of the UI
     apGUI.$ratiosLine3 = document.createElement("DIV");
     apGUI.$ratiosLine3.setAttribute('style', 'display: inline-block; text-align: left; width: 100%');
-    var listratiosLine3 = ["Resilience","Tenacity","Greed","Frenzy","Championism"];
+    var listratiosLine3 = ["Resilience","Tenacity","Greed","Frenzy","Championism","Masterfulness","Smithology"];
     for (var i in listratiosLine3)
         RAutoPerks.createInput(listratiosLine3[i],apGUI.$ratiosLine3);
     //Create dump perk dropdown
@@ -1373,15 +1373,20 @@ RAutoPerks.initializePerks = function () {
     var greed = new RAutoPerks.VariablePerk("greed", 10000000000, true,      12, 0.1, 40);
     var frenzy = new RAutoPerks.VariablePerk("frenzy", 1000000000000000, true,      13, 0.1);
     var championism = new RAutoPerks.VariablePerk("championism", 1000000000, true,      14, 0.1);
-    
+    var masterfulness = new RAutoPerks.VariablePerk("masterfulness", 100000000000000000000000, true,      15, 0.1);
+    var smithology = new RAutoPerks.VariablePerk("smithology", 100000000000000000000000, true,      16, 0.1);
+	
     equality.exprate = 1.5;
     observation.exprate = 2;
     championism.exprate = 5;
+    masterfulness.exprate = 50;
+    smithology.exprate = 4;
+
     //scruffy
 	//no
     //tier2
 	//no
-    RAutoPerks.perkHolder = [range, agility, bait, trumps, packrat, hunger, observation, /*overkill,*/ looting, toughness, power, motivation, pheromones, artisanistry, carpentry, prismal, resilience, criticality, tenacity, greed, frenzy, championism, equality];
+    RAutoPerks.perkHolder = [range, agility, bait, trumps, packrat, hunger, observation, /*overkill,*/ looting, toughness, power, motivation, pheromones, artisanistry, carpentry, prismal, resilience, criticality, tenacity, greed, frenzy, championism, equality, masterfulness, smithology];
     for(var i in RAutoPerks.perkHolder) {
         RAutoPerks.perkHolder[i].radLevel = 0;
         RAutoPerks.perkHolder[i].spent = 0;
